@@ -4,12 +4,10 @@
         <div class="intro h-100">
           <div class="row h-100 justify-content-center align-items-center">
             <div class="col-md-6">
-              <h3> Overview Page </h3>
-              <p>Here we control in our system </p>
+              <button @click="addNew" class="btn btn-success center">Add Adverice</button>
+              
             </div>
-            <div class="col-md-6">
-                <img src="/img/svg/overview.svg" class="img-fluid">
-            </div>
+            
           </div>
         </div>
           

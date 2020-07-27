@@ -1,23 +1,30 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import Advertice from "./views/Advertice.vue";
 import Admin from "./views/Admin.vue";
 import Overview from "./views/Overview.vue";
-import Products from "./views/Products.vue";
-import Orders from "./views/Orders.vue";
+import SpareParts from "./views/SpareParts.vue";
+import Users from "./views/Users.vue";
+import CarModel from "./views/CarModel.vue";
+import UsedCars from "./views/UsedCars.vue";
+import NewCars from "./views/NewCars.vue";
+import MaintanceCenter from "./views/MaintanceCenter.vue";
+import Offers from "./views/Offers.vue";
 import Profile from "./views/Profile.vue";
-
+import Login from './components/Login'
+ 
 
 Vue.use(Router);
 
 const router = new Router({
-    mode: "history",
+    mode: 'history',
     base: process.env.BASE_URL,
     routes: [
       {
-        path: "/",
-        name: "home",
-        component: Home
+        path: "/login",
+        name: "login",
+        component: Login
       },
       {
         path: "/admin",
@@ -31,19 +38,44 @@ const router = new Router({
             component: Overview
           },
           {
-            path: "/admin/products",
-            name: "products",
-            component: Products
+            path: "/admin/users",
+            name: "users",
+            component: Users
           },
           {
-            path: "/admin/orders",
-            name: "orders",
-            component: Orders
+            path: "/admin/SpareParts",
+            name: "spareparts",
+            component: SpareParts
           },
           {
-            path: "/admin/profile",
-            name: "profile",
-            component: Profile
+            path: "/admin/carmodel",
+            name: "carmodel",
+            component: CarModel
+          },
+          {
+            path: "/admin/usedcars",
+            name: "usedcars",
+            component: UsedCars
+          },
+          {
+            path: "/admin/newcars",
+            name: "newcars",
+            component: NewCars
+          },
+          {
+            path: "/admin/maintancecenter",
+            name: "maintancecenter",
+            component: MaintanceCenter
+          },
+          {
+            path: "/admin/offers",
+            name: "offers",
+            component: Offers
+          },
+          {
+            path: "/admin/advertice",
+            name: "advertice",
+            component: Advertice
           },
 
         ]
@@ -78,5 +110,15 @@ const router = new Router({
       }
     ]
   });
-
+  router.beforeEach((to, from, next) => {
+    if(to.matched.some(record => record.meta.requiresAuth)) {
+      if (store.getters.isLoggedIn) {
+        next()
+        return
+      }
+      next('/login') 
+    } else {
+      next() 
+    }
+  })
   export default router;

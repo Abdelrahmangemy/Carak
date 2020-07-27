@@ -6,6 +6,19 @@ import jQuery from 'jquery';
 import 'popper.js';
 import 'bootstrap';
 import './assets/app.scss';  
+import axios from 'axios'
+window.axios = axios
+import store from './store'
+window.store = store
+Vue.prototype.$http = axios;
+
+
+
+var token;
+window.token = localStorage.getItem('AToken');
+//axios.defaults.baseURL = '';
+axios.defaults.headers.common['Authorization'] = 'Bearer '+token;
+axios.defaults.headers.post['Content-Type'] = 'application/json';
 
 
 
@@ -30,11 +43,12 @@ const Toast = Swal.mixin({
 window.Toast = Toast;
 
 
-import store from './store.js';
 
 Vue.component('Navbar',require('./components/Navbar.vue').default);
 Vue.component('add-to-cart',require('./components/AddToCart.vue').default);
 Vue.component('Products-list',require('./sections/ProductList.vue').default);
+
+
 
 Vue.use(VueRouter);
 

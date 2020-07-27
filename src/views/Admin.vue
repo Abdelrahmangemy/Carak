@@ -8,40 +8,13 @@
             <div class="sidebar-content">
                 <!-- sidebar-brand  -->
                 <div class="sidebar-item sidebar-brand">
-                    <a href="#">Vue Shop</a>
+                    <a href="#">Carak</a>
                     <div id="close-sidebar" @click="closeMenu">
                         <i class="fas fa-times"></i>
                     </div>
                 </div>
-                <!-- sidebar-header  -->
-                <div class="sidebar-item sidebar-header">
-                    <div class="user-pic">
-                        <img class="img-responsive img-rounded" src="/img/user.png" alt="User picture">
-                    </div>
-                    <div class="user-info">
-                        <span class="user-name">Jhon
-                            <strong>Smith</strong>
-                        </span>
-                        <span class="user-role"> {{email}} </span>
-                        <span class="user-status">
-                            <i class="fa fa-circle"></i>
-                            <span>Online</span>
-                        </span>
-                    </div>
-                </div>
-                <!-- sidebar-search  -->
-                <div class="sidebar-item sidebar-search">
-                    <div>
-                        <div class="input-group">
-                            <input type="text" class="form-control search-menu" placeholder="Search...">
-                            <div class="input-group-append">
-                                <span class="input-group-text">
-                                    <i class="fa fa-search" aria-hidden="true"></i>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
+
                 <!-- sidebar-menu  -->
                 <div class=" sidebar-item sidebar-menu">
                     <ul>
@@ -56,32 +29,50 @@
                             </router-link>
                         </li>
                         <li>
-                            <router-link to="/admin/products">
+                        <li>
+                            <router-link to="/admin/spareparts">
                                 <i class="fab fa-amazon"></i>
-                                <span>Products</span>
+                                <span>Spare Parts</span>
                             </router-link>
                         </li>
                         <li>
-                            <router-link to="/admin/orders">
-                                <i class="fa fa-shopping-cart"></i>
-                                <span>Orders</span>
+                            <router-link to="/admin/carmodel">
+                                <i class="fab fa-amazon"></i>
+                                <span>Car Models</span>
                             </router-link>
                         </li>
-
                         <li>
-                            <router-link to="/admin/profile">
-                                <i class="fa fa-user"></i>
-                                <span>Profile</span>
+                            <router-link to="/admin/usedcars">
+                                <i class="fab fa-amazon"></i>
+                                <span>Used Cars</span>
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/admin/newcars">
+                                <i class="fab fa-amazon"></i>
+                                <span>New Cars</span>
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/admin/offers">
+                                <i class="fab fa-amazon"></i>
+                                <span>Offers</span>
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/admin/maintancecenter">
+                                <i class="fab fa-amazon"></i>
+                                <span>Maintance Center</span>
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/admin/advertice">
+                                <i class="fab fa-amazon"></i>
+                                <span>Advertice</span>
                             </router-link>
                         </li>
 
                        
-                        <li>
-                            <a href="#" @click="logout()">
-                                <i class="fa fa-power-off"></i>
-                                <span>Logout</span>
-                            </a>
-                        </li>
                     </ul>
                 </div>
                 <!-- sidebar-menu  -->
