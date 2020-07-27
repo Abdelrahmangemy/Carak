@@ -12,7 +12,7 @@
     "bootstrap": "^4.3.1",
     "core-js": "^3.3.2",
     "cors": "^2.8.5",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "laravel-vue-pagination": "^2.3.1",
     "popper.js": "^1.16.0",
     "vform": "^1.0.1",
